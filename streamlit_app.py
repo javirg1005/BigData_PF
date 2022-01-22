@@ -77,7 +77,7 @@ st.vega_lite_chart(data_teammarketvalue, {
     'encoding': {
         'x': {'field': 'Equipos'},
         'y': {'field': 'Valor de mercado (millones €)', 'type': 'quantitative'},
-        'color': {'field': 'Equipos'}
+        'color': {'field': 'Valor de mercado (millones €)'}
     },
     'config': {
         'legend': {
