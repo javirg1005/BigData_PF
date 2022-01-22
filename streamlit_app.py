@@ -67,3 +67,21 @@ def load_data_mvpais():
     data = pd.DataFrame(datos)
     data = data.iloc[:, ::-1]
     return data
+
+st.subheader('Valor de mercado por equipos (millones de €)')
+data_teammarketvalue = load_data_teamvalue()
+st.vega_lite_chart(data_teammarketvalue, {
+    'mark': {'type': 'bar', 'tooltip': True},
+    'height': 500,
+    'width': 700,
+    'encoding': {
+        'x': {'field': 'Equipos'},
+        'y': {'field': 'Valor de mercado (millones €)', 'type': 'quantitative'},
+        'color': {'field': 'Equipos'}
+    },
+    'config': {
+        'legend': {
+            'disable': True
+        }
+    }
+})
