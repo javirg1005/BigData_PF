@@ -102,7 +102,7 @@ with colPlayerMarketValue:
         'height': 500,
         'width': 700,
         'encoding': {
-            'x': {'field': 'Players', 'sort': '-y'},
+            'x': {'field': 'Player', 'sort': '-y'},
             'y': {'field': 'Valor de mercado (millones €)', 'type': 'quantitative'},
             'color': {
                 'field': 'Valor de mercado (millones €)', 
