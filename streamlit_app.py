@@ -68,24 +68,27 @@ def load_data_mvpais():
     data = data.iloc[:, ::-1]
     return data
 
-st.subheader('Valor de mercado por equipos (millones de €)')
-st.text('Muestra el valor de mercado de mayor a menor en los primeros 20 equipos.')
-data_teammarketvalue = load_data_teamvalue()
-st.vega_lite_chart(data_teammarketvalue, {
-    'mark': {'type': 'bar', 'tooltip': True},
-    'height': 500,
-    'width': 700,
-    'encoding': {
-        'x': {'field': 'Equipos', 'sort': '-y'},
-        'y': {'field': 'Valor de mercado (millones €)', 'type': 'quantitative'},
-        'color': {
-            'field': 'Valor de mercado (millones €)', 
-            'scale': {'scheme': 'spectral', 'reverse': True}
+colTeamMarketValue, colPlayerMarketValue = st.columns(2)
+
+with colTeamMarketValue, colPlayerMarketValue:
+    st.subheader('Valor de mercado por equipos (millones de €)')
+    st.text('Muestra el valor de mercado de mayor a menor en los primeros 20 equipos.')
+    data_teammarketvalue = load_data_teamvalue()
+    st.vega_lite_chart(data_teammarketvalue, {
+        'mark': {'type': 'bar', 'tooltip': True},
+        'height': 500,
+        'width': 700,
+        'encoding': {
+            'x': {'field': 'Equipos', 'sort': '-y'},
+            'y': {'field': 'Valor de mercado (millones €)', 'type': 'quantitative'},
+            'color': {
+                'field': 'Valor de mercado (millones €)', 
+                'scale': {'scheme': 'spectral', 'reverse': True}
+            }
+        },
+        'config': {
+            'legend': {
+                'disable': True
+            }
         }
-    },
-    'config': {
-        'legend': {
-            'disable': True
-        }
-    }
-})
+    })
