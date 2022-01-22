@@ -69,6 +69,7 @@ def load_data_mvpais():
     return data
 
 st.subheader('Valor de mercado por equipos (millones de €)')
+st.text('Muestra el valor de mercado de mayor a menor en los primeros 20 equipos')
 data_teammarketvalue = load_data_teamvalue()
 st.vega_lite_chart(data_teammarketvalue, {
     'mark': {'type': 'bar', 'tooltip': True},
