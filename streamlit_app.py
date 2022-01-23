@@ -70,7 +70,7 @@ def load_data_mvpais():
     return data
 raimon = Image.open('Raimon.png')
 royal = Image.open('Royal.png')
-col1, col2, col3 = st.columns([1, 6, 1])
+col1, col2, col3 = st.columns([2, 6, 1])
 with col1:
     st.image(raimon)
 with col2:
