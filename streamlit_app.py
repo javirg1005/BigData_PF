@@ -68,6 +68,36 @@ def load_data_mvpais():
     data = data.iloc[:, ::-1]
     return data
 
+col1, col2, col3 = st.columns([2.5, 6, 1])
+with col1:
+    st.write("")
+with col2:
+    st.title('Patrones de consumo en Almería (2015)')
+with col3:
+    st.write("")
+
+st.subheader('Valor de mercado por país (millones de €)')
+st.text('Muestra el valor de mercado ordenado de mayor a menor en los países.')
+data_mvpaises = load_data_mvpais()
+st.vega_lite_chart(data_mvpaises, {
+    'mark': {'type': 'bar', 'tooltip': True},
+    'height': 850,
+    'width': 1200,
+    'encoding': {
+        'x': {'field': 'País', 'sort': '-y'},
+        'y': {'field': 'Valor de mercado (millones €)', 'type': 'quantitative'},
+        'color': {
+            'field': 'Valor de mercado (millones €)', 
+            'scale': {'scheme': 'rainbow', 'reverse': True}
+        }
+    },
+    'config': {
+        'legend': {
+            'disable': True
+        }
+    }
+})
+
 colTeamMarketValue, colPlayerMarketValue = st.columns(2)
 
 with colTeamMarketValue:
@@ -236,7 +266,7 @@ with colGolPlayer:
     data_golplayer = load_data_goalsplayer()
     st.vega_lite_chart(data_golplayer, {
         'mark': {'type': 'bar', 'tooltip': True},
-        'height': 600,
+        'height': 700,
         'width': 700,
         'encoding': {
             'x': {'field': 'Jugador', 'sort': '-y'},
@@ -252,25 +282,3 @@ with colGolPlayer:
             }
         }
     })
-
-st.subheader('Valor de mercado por país (millones de €)')
-st.text('Muestra el valor de mercado ordenado de mayor a menor en los países.')
-data_mvpaises = load_data_mvpais()
-st.vega_lite_chart(data_mvpaises, {
-    'mark': {'type': 'bar', 'tooltip': True},
-    'height': 850,
-    'width': 1200,
-    'encoding': {
-        'x': {'field': 'País', 'sort': '-y'},
-        'y': {'field': 'Valor de mercado (millones €)', 'type': 'quantitative'},
-        'color': {
-            'field': 'Valor de mercado (millones €)', 
-            'scale': {'scheme': 'rainbow', 'reverse': True}
-        }
-    },
-    'config': {
-        'legend': {
-            'disable': True
-        }
-    }
-})
