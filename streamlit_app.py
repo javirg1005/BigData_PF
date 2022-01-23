@@ -126,7 +126,7 @@ st.vega_lite_chart(data_playercards, {
         'x': {
             'field': 'Jugador',
             'type': 'nominal',
-            'sort': '-layer[0]'
+            'sort': '-layer'
         }
     },
     'layer': [
@@ -156,3 +156,51 @@ st.vega_lite_chart(data_playercards, {
         }
     }
 })
+
+colCountryCups, colCountryPlayers = st.columns(2)
+
+with colCountryCups:
+    st.subheader('Ligas en países')
+    st.text('Muestra el número de ligas de cada país.')
+    data_teammarketvalue = load_data_teamvalue()
+    st.vega_lite_chart(data_teammarketvalue, {
+        'mark': {'type': 'bar', 'tooltip': True},
+        'height': 500,
+        'width': 700,
+        'encoding': {
+            'x': {'field': 'Equipos', 'sort': '-y'},
+            'y': {'field': 'Valor de mercado (millones €)', 'type': 'quantitative'},
+            'color': {
+                'field': 'Valor de mercado (millones €)', 
+                'scale': {'scheme': 'spectral', 'reverse': True}
+            }
+        },
+        'config': {
+            'legend': {
+                'disable': True
+            }
+        }
+    })
+
+with colCountryPlayers:
+    st.subheader('Jugadores de países')
+    st.text('Muestra el número de jugadores originarios de cada país.')
+    data_playermarketvalue = load_data_playervalue()
+    st.vega_lite_chart(data_playermarketvalue, {
+        'mark': {'type': 'bar', 'tooltip': True},
+        'height': 500,
+        'width': 700,
+        'encoding': {
+            'x': {'field': 'Jugadores', 'sort': '-y'},
+            'y': {'field': 'Valor de mercado (millones €)', 'type': 'quantitative'},
+            'color': {
+                'field': 'Valor de mercado (millones €)', 
+                'scale': {'scheme': 'spectral', 'reverse': True}
+            }
+        },
+        'config': {
+            'legend': {
+                'disable': True
+            }
+        }
+    })
