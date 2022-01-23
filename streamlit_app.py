@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import requests
+from PIL import Image
 
 
 DATA_URL = ('http://2bc5-83-57-44-98.ngrok.io') #Esto cambia 
@@ -67,14 +68,15 @@ def load_data_mvpais():
     data = pd.DataFrame(datos)
     data = data.iloc[:, ::-1]
     return data
-
+raimon = Image.open('Raimon_Emblema.png')
+royal = Image.open('Royal.png')
 col1, col2, col3 = st.columns([3, 6, 1])
 with col1:
-    st.write("")
+    st.image(raimon)
 with col2:
     st.title('Estadísticas relevantes en el mundo del fútbol')
 with col3:
-    st.write("")
+    st.image(royal)
 
 colTeamMarketValue, colPlayerMarketValue = st.columns(2)
 
