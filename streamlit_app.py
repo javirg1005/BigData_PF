@@ -76,7 +76,7 @@ with colTeamMarketValue:
     data_teammarketvalue = load_data_teamvalue()
     st.vega_lite_chart(data_teammarketvalue, {
         'mark': {'type': 'bar', 'tooltip': True},
-        'height': 500,
+        'height': 600,
         'width': 700,
         'encoding': {
             'x': {'field': 'Equipos', 'sort': '-y'},
@@ -99,7 +99,7 @@ with colPlayerMarketValue:
     data_playermarketvalue = load_data_playervalue()
     st.vega_lite_chart(data_playermarketvalue, {
         'mark': {'type': 'bar', 'tooltip': True},
-        'height': 500,
+        'height': 600,
         'width': 700,
         'encoding': {
             'x': {'field': 'Jugadores', 'sort': '-y'},
@@ -120,8 +120,8 @@ st.subheader('Jugadores con más tarjetas rojas')
 st.text('Muestra los 20 jugadores con más tarjetas rojas, además de mostrar el número de amarillas también.')
 data_playercards = load_data_playercards()
 st.vega_lite_chart(data_playercards, {
-    'height': 700,
-    'width': 1000,
+    'height': 800,
+    'width': 1200,
     'encoding': {
         'x': {
             'field': 'Jugador',
@@ -165,7 +165,7 @@ with colCountryCups:
     data_countrycups = load_data_countrycups()
     st.vega_lite_chart(data_countrycups, {
         'mark': {'type': 'bar', 'tooltip': True},
-        'height': 500,
+        'height': 600,
         'width': 700,
         'encoding': {
             'x': {'field': 'País', 'sort': '-y'},
@@ -188,7 +188,7 @@ with colCountryPlayers:
     data_countryplayers = load_data_countryplayes()
     st.vega_lite_chart(data_countryplayers, {
         'mark': {'type': 'bar', 'tooltip': True},
-        'height': 500,
+        'height': 600,
         'width': 700,
         'encoding': {
             'x': {'field': 'País', 'sort': '-y'},
@@ -213,7 +213,7 @@ with colGolTeams:
     data_golteams = load_data_goalsteams()
     st.vega_lite_chart(data_golteams, {
         'mark': {'type': 'bar', 'tooltip': True},
-        'height': 500,
+        'height': 600,
         'width': 700,
         'encoding': {
             'x': {'field': 'Equipos', 'sort': '-y'},
@@ -236,7 +236,7 @@ with colGolPlayer:
     data_golplayer = load_data_goalsplayer()
     st.vega_lite_chart(data_golplayer, {
         'mark': {'type': 'bar', 'tooltip': True},
-        'height': 500,
+        'height': 600,
         'width': 700,
         'encoding': {
             'x': {'field': 'Jugador', 'sort': '-y'},
@@ -254,7 +254,7 @@ with colGolPlayer:
     })
 
 st.subheader('Valor de mercado por país (millones de €)')
-st.text('Muestra el valor de mercado de mayor a menor en los países.')
+st.text('Muestra el valor de mercado ordenado de mayor a menor en los países.')
 data_mvpaises = load_data_mvpais()
 st.vega_lite_chart(data_mvpaises, {
     'mark': {'type': 'bar', 'tooltip': True},
