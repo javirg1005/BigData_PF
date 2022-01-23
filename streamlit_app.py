@@ -171,7 +171,7 @@ with colCountryCups:
             'x': {'field': 'País', 'sort': '-y'},
             'y': {'field': 'Nº de ligas', 'type': 'quantitative'},
             'color': {
-                'field': 'Nº de jugadores', 
+                'field': 'País', 
                 'scale': {'scheme': 'pastel2'}
             }
         },
@@ -243,7 +243,7 @@ with colGolPlayer:
             'y': {'field': 'Goles totales', 'type': 'quantitative'},
             'color': {
                 'field': 'Goles totales', 
-                'scale': {'scheme': 'brownbluegreen'}
+                'scale': {'scheme': 'brownbluegreen', 'reverse': True}
             }
         },
         'config': {
