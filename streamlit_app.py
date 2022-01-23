@@ -124,9 +124,9 @@ st.vega_lite_chart(data_playercards, {
     'height': 500,
     'width': 700,
     'encoding': {
-        'x': {'field': 'Jugadores', 'sort': '-y'},
+        'x': {'field': 'Jugador', 'sort': '-y'},
         'y': {'field': 'Tarjetas Rojas', 'type': 'quantitative'},
-        'xOffset': {'field': 'Tarjetas Amarillas', 'type': 'quantitative'},
+        'yOffset': {'field': 'Tarjetas Amarillas', 'type': 'quantitative'},
         'color': {
             'field': 'Tarjetas Amarillas', 
             'scale': {'range': ['#FB683F', '#FCF951']}
