@@ -131,7 +131,7 @@ st.vega_lite_chart(data_playercards, {
     },
     'layer': [
         {
-            'mark': {'type': 'bar', 'tooltip': True, 'xOffset': -5, 'size': 10, 'color': '#FB683F'},
+            'mark': {'type': 'bar', 'tooltip': True, 'xOffset': -10, 'size': 20, 'color': '#FB683F'},
             'encoding': {
                 'y': {
                     'field': 'Tarjetas Rojas',
@@ -140,7 +140,7 @@ st.vega_lite_chart(data_playercards, {
             }
         },
         {
-            'mark': {'type': 'bar', 'tooltip': True, 'xOffset': 5, 'size': 10, 'color': '#FCF951'},
+            'mark': {'type': 'bar', 'tooltip': True, 'xOffset': 10, 'size': 20, 'color': '#FCF951'},
             'encoding': {
                 'y': {
                     'field': 'Tarjetas Amarillas',
