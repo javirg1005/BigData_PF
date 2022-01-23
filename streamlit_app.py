@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import requests
+from PIL import Image
 
 
 DATA_URL = ('http://2bc5-83-57-44-98.ngrok.io') #Esto cambia 
@@ -72,7 +73,9 @@ col1, col2, col3 = st.columns([3, 6, 1])
 with col1:
     st.write("")
 with col2:
-    st.title('Tu puta madre en vinagre')
+    st.title('RAIMON KAMPIOM')
+    image = Image.open('Raimon.png')
+    st.image(image)
 with col3:
     st.write("")
 
