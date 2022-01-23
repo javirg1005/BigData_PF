@@ -68,7 +68,7 @@ def load_data_mvpais():
     data = pd.DataFrame(datos)
     data = data.iloc[:, ::-1]
     return data
-raimon = Image.open('Raimon_Emblema.png')
+raimon = Image.open('Raimon.png')
 royal = Image.open('Royal.png')
 col1, col2, col3 = st.columns([3, 6, 1])
 with col1:
