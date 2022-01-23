@@ -143,7 +143,7 @@ st.vega_lite_chart(data_playercards, {
             #'xOffset': {'datum': {'repeat': 'layer'}}
         }
     },
-    #'resolve': {'scale': {'y': 'independent'}},
+    'resolve': {'scale': {'y': 'independent'}},
     'config': {
         'legend': {
             'disable': True
