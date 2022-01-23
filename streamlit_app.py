@@ -168,7 +168,7 @@ with colCountryCups:
         'height': 500,
         'width': 700,
         'encoding': {
-            'x': {'field': 'País'},
+            'x': {'field': 'País', 'sort': '-y'},
             'y': {'field': 'Nº de ligas', 'type': 'quantitative'},
             'color': {
                 'field': 'País', 
@@ -191,10 +191,10 @@ with colCountryPlayers:
         'height': 500,
         'width': 700,
         'encoding': {
-            'x': {'field': 'País'},
-            'y': {'field': 'N de jugadores', 'type': 'quantitative', 'title': 'Nº de jugadores'},
+            'x': {'field': 'País', 'sort': '-y'},
+            'y': {'field': 'Nº de jugadores', 'type': 'quantitative'},
             'color': {
-                'field': 'N de jugadores', 
+                'field': 'Nº de jugadores', 
                 'scale': {'scheme': 'set3'}
             }
         },
