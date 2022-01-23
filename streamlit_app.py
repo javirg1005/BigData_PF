@@ -120,42 +120,6 @@ st.subheader('Jugadores con más tarjetas rojas')
 st.text('Muestra los 20 jugadores con más tarjetas rojas, además de mostrar el número de amarillas también.')
 data_playercards = load_data_playercards()
 st.vega_lite_chart(data_playercards, {
-    'height': 500,
-    'width': 700,
-    'repeat': {'layer': ['Tarjetas Rojas', 'Tarjetas Amarillas']},
-    'spec': {
-        'mark': {'type': 'bar', 'tooltip': True},
-        'encoding': {
-            'x': {
-                'field': 'Jugador',
-                'type': 'nominal',
-                'sort': '-y'
-            },
-            'y': {
-                'field': {'repeat': 'layer'},
-                'type': 'quantitative'
-            },
-            'color': {
-                'datum': {'repeat': 'layer'},
-                'scale': {
-                    'range': ['#FB683F', '#FCF951']
-                }
-            },
-            'xOffset': {'datum': {'repeat': 'layer'}}
-        }
-    },
-    'resolve': {'scale': {'y': 'independent'}},
-    'config': {
-        'legend': {
-            'disable': True
-        }
-    }
-})
-
-st.subheader('Jugadores con más tarjetas rojas')
-st.text('Muestra los 20 jugadores con más tarjetas rojas, además de mostrar el número de amarillas también.')
-data_playercards = load_data_playercards()
-st.vega_lite_chart(data_playercards, {
     'height': 700,
     'width': 1000,
     'encoding': {
