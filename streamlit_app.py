@@ -126,7 +126,7 @@ st.vega_lite_chart(data_playercards, {
         'x': {
             'field': 'Jugador',
             'type': 'nominal',
-            'sort': '-layer'
+            'sort': '-layer[0]'
         }
     },
     'layer': [
