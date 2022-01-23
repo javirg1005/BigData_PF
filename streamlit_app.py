@@ -162,17 +162,17 @@ colCountryCups, colCountryPlayers = st.columns(2)
 with colCountryCups:
     st.subheader('Ligas en países')
     st.text('Muestra el número de ligas de cada país.')
-    data_teammarketvalue = load_data_teamvalue()
-    st.vega_lite_chart(data_teammarketvalue, {
+    data_countrycups = load_data_countrycups()
+    st.vega_lite_chart(data_countrycups, {
         'mark': {'type': 'bar', 'tooltip': True},
         'height': 500,
         'width': 700,
         'encoding': {
-            'x': {'field': 'Equipos', 'sort': '-y'},
-            'y': {'field': 'Valor de mercado (millones €)', 'type': 'quantitative'},
+            'x': {'field': 'País'},
+            'y': {'field': 'Nº de ligas', 'type': 'quantitative'},
             'color': {
-                'field': 'Valor de mercado (millones €)', 
-                'scale': {'scheme': 'spectral', 'reverse': True}
+                'field': 'País', 
+                'scale': {'scheme': 'pastel2'}
             }
         },
         'config': {
@@ -185,17 +185,17 @@ with colCountryCups:
 with colCountryPlayers:
     st.subheader('Jugadores de países')
     st.text('Muestra el número de jugadores originarios de cada país.')
-    data_playermarketvalue = load_data_playervalue()
-    st.vega_lite_chart(data_playermarketvalue, {
+    data_countryplayers = load_data_countryplayes()
+    st.vega_lite_chart(data_countryplayers, {
         'mark': {'type': 'bar', 'tooltip': True},
         'height': 500,
         'width': 700,
         'encoding': {
-            'x': {'field': 'Jugadores', 'sort': '-y'},
-            'y': {'field': 'Valor de mercado (millones €)', 'type': 'quantitative'},
+            'x': {'field': 'País'},
+            'y': {'field': 'N de jugadores', 'type': 'quantitative', 'title': 'Nº de jugadores'},
             'color': {
-                'field': 'Valor de mercado (millones €)', 
-                'scale': {'scheme': 'spectral', 'reverse': True}
+                'field': 'N de jugadores', 
+                'scale': {'scheme': 'set3'}
             }
         },
         'config': {
