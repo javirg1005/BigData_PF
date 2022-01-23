@@ -123,7 +123,7 @@ st.vega_lite_chart(data_playercards, {
     'height': 500,
     'width': 700,
     #'repeat': {'layer': ['Tarjetas Rojas', 'Tarjetas Amarillas']},
-    #'spec': {
+    'spec': {
         'mark': {'type': 'bar', 'tooltip': True},
         'encoding': {
             'x': {
@@ -145,7 +145,7 @@ st.vega_lite_chart(data_playercards, {
             },
             #'xOffset': {'datum': {'repeat': 'layer'}}
         },
-    #},
+    },
     'resolve': {'scale': {'y': 'independent'}},
     'config': {
         'legend': {
