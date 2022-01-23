@@ -258,14 +258,14 @@ st.text('Muestra el valor de mercado de mayor a menor en los países.')
 data_mvpaises = load_data_mvpais()
 st.vega_lite_chart(data_mvpaises, {
     'mark': {'type': 'bar', 'tooltip': True},
-    'height': 800,
+    'height': 850,
     'width': 1200,
     'encoding': {
-        'x': {'field': 'Jugadores', 'sort': '-y'},
+        'x': {'field': 'País', 'sort': '-y'},
         'y': {'field': 'Valor de mercado (millones €)', 'type': 'quantitative'},
         'color': {
             'field': 'Valor de mercado (millones €)', 
-            'scale': {'scheme': 'spectral', 'reverse': True}
+            'scale': {'scheme': 'rainbow', 'reverse': True}
         }
     },
     'config': {
