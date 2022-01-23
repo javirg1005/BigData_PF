@@ -4,7 +4,7 @@ import numpy as np
 import requests
 
 
-DATA_URL = ('http://2477-83-57-44-98.ngrok.io') #Esto cambia 
+DATA_URL = ('http://2bc5-83-57-44-98.ngrok.io') #Esto cambia 
 
 
 def recoger(url):
@@ -107,6 +107,29 @@ with colPlayerMarketValue:
             'color': {
                 'field': 'Valor de mercado (millones €)', 
                 'scale': {'scheme': 'spectral', 'reverse': True}
+            }
+        },
+        'config': {
+            'legend': {
+                'disable': True
+            }
+        }
+    })
+
+st.subheader('Jugadores con más tarjetas rojas')
+    st.text('Muestra los 20 jugadores con más tarjetas rojas, además de mostrar el número de amarillas también.')
+    data_playercards = load_data_playercards()
+    st.vega_lite_chart(data_playercards, {
+        'mark': {'type': 'bar', 'tooltip': True},
+        'height': 500,
+        'width': 700,
+        'encoding': {
+            'x': {'field': 'Jugadores', 'sort': '-y'},
+            'y': {'field': 'Tarjetas Rojas', 'type': 'quantitative'},
+            'xOffset': {'field': 'Tarjetas Amarillas', 'type': 'quantitative'},
+            'color': {
+                'field': 'Tarjetas Amarillas', 
+                'scale': {'range': ['#FB683F', '#FCF951']}
             }
         },
         'config': {
