@@ -75,7 +75,7 @@ with col1:
 with col2:
     st.title('RAIMON KAMPIOM')
     image = Image.open('Raimon.png')
-    st.image(image)
+    st.image(image, width=600)
 with col3:
     st.write("")
 
