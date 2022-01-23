@@ -167,7 +167,7 @@ st.vega_lite_chart(data_playercards, {
     },
     'layer': [
         {
-            'mark': {'type': 'bar', 'tooltip': True, 'xOffset': -10, 'size': 10, 'color': '#FB683F'},
+            'mark': {'type': 'bar', 'tooltip': True, 'xOffset': 0, 'size': 10, 'color': '#FB683F'},
             'encoding': {
                 'y': {
                     'field': 'Tarjetas Rojas',
