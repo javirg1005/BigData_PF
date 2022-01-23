@@ -141,9 +141,50 @@ st.vega_lite_chart(data_playercards, {
                     'range': ['#FB683F', '#FCF951']
                 }
             },
-            #'xOffset': {'datum': {'repeat': 'layer'}}
+            'xOffset': {'datum': {'repeat': 'layer'}}
         }
     },
+    'resolve': {'scale': {'y': 'independent'}},
+    'config': {
+        'legend': {
+            'disable': True
+        }
+    }
+})
+
+st.subheader('Jugadores con más tarjetas rojas')
+st.text('Muestra los 20 jugadores con más tarjetas rojas, además de mostrar el número de amarillas también.')
+data_playercards = load_data_playercards()
+st.vega_lite_chart(data_playercards, {
+    'height': 500,
+    'width': 700,
+    'encoding': {
+        'x': {
+            'field': 'Jugador',
+            'type': 'nominal',
+            'sort': '-y'
+        }
+    },
+    'layer': [
+        {
+            'mark': {'type': 'bar', 'tooltip': True, 'xOffset': -20, 'color': '#FB683F'},
+            'encoding': {
+                'y': {
+                    'field': 'Tarjetas Rojas',
+                    'type': 'quantitative'
+                }
+            }
+        },
+        {
+            'mark': {'type': 'bar', 'tooltip': True, 'xOffset': 30, 'color': '#FCF951'},
+            'encoding': {
+                'y': {
+                    'field': 'Tarjetas Amarillas',
+                    'type': 'quantitative'
+                }
+            }
+        }
+    ],
     'resolve': {'scale': {'y': 'independent'}},
     'config': {
         'legend': {
