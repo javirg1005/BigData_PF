@@ -243,7 +243,7 @@ with colGolPlayer:
             'y': {'field': 'Goles totales', 'type': 'quantitative'},
             'color': {
                 'field': 'Goles totales', 
-                'scale': {'scheme': 'browngreen'}
+                'scale': {'scheme': 'brownbluegreen'}
             }
         },
         'config': {
