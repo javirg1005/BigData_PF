@@ -68,7 +68,7 @@ def load_data_mvpais():
     data = data.iloc[:, ::-1]
     return data
 
-col1, col2, col3 = st.columns([2.5, 6, 1])
+col1, col2, col3 = st.columns([3, 6, 1])
 with col1:
     st.write("")
 with col2:
