@@ -194,8 +194,56 @@ with colCountryPlayers:
             'x': {'field': 'País', 'sort': '-y'},
             'y': {'field': 'Nº de jugadores', 'type': 'quantitative'},
             'color': {
-                'field': 'Nº de jugadores', 
+                'field': 'País', 
                 'scale': {'scheme': 'set3'}
+            }
+        },
+        'config': {
+            'legend': {
+                'disable': True
+            }
+        }
+    })
+
+colGolTeams, colGolPlayer = st.columns(2)
+
+with colGolTeams:
+    st.subheader('Goles por equipos')
+    st.text('Muestra el número de goles de los 20 equipos con más goles.')
+    data_golteams = load_data_goalsteams()
+    st.vega_lite_chart(data_golteams, {
+        'mark': {'type': 'bar', 'tooltip': True},
+        'height': 500,
+        'width': 700,
+        'encoding': {
+            'x': {'field': 'Equipos', 'sort': '-y'},
+            'y': {'field': 'Goles totales', 'type': 'quantitative'},
+            'color': {
+                'field': 'Equipos', 
+                'scale': {'scheme': 'pinkyellowgreen'}
+            }
+        },
+        'config': {
+            'legend': {
+                'disable': True
+            }
+        }
+    })
+
+with colGolPlayer:
+    st.subheader('Goles por jugadores')
+    st.text('Muestra el número de goles de los 20 jugadores con más goles.')
+    data_golplayer = load_data_goalsplayer()
+    st.vega_lite_chart(data_golplayer, {
+        'mark': {'type': 'bar', 'tooltip': True},
+        'height': 500,
+        'width': 700,
+        'encoding': {
+            'x': {'field': 'Jugador', 'sort': '-y'},
+            'y': {'field': 'Goles totales', 'type': 'quantitative'},
+            'color': {
+                'field': 'Jugador', 
+                'scale': {'scheme': 'redyellowgreen', 'reverse': True}
             }
         },
         'config': {
