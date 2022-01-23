@@ -125,7 +125,8 @@ st.vega_lite_chart(data_playercards, {
     'encoding': {
         'x': {
             'field': 'Jugador',
-            'type': 'nominal'
+            'type': 'nominal',
+            'sort': '-layer'
         }
     },
     'layer': [
@@ -134,8 +135,7 @@ st.vega_lite_chart(data_playercards, {
             'encoding': {
                 'y': {
                     'field': 'Tarjetas Rojas',
-                    'type': 'quantitative',
-                    'sort': '-y'
+                    'type': 'quantitative'
                 }
             }
         },
