@@ -122,8 +122,8 @@ data_playercards = load_data_playercards()
 st.vega_lite_chart(data_playercards, {
     'height': 500,
     'width': 700,
-    'repeat': {'layer': ['Tarjetas Rojas', 'Tarjetas Amarillas']},
-    'spec': {
+    #'repeat': {'layer': ['Tarjetas Rojas', 'Tarjetas Amarillas']},
+    #'spec': {
         'mark': {'type': 'bar', 'tooltip': True},
         'encoding': {
             'x': {
@@ -132,18 +132,20 @@ st.vega_lite_chart(data_playercards, {
             },
             'y': {
                 'aggregate': 'sum',
-                'field': {'repeat': 'layer'},
+                #'field': {'repeat': 'layer'},
+                'field': 'Tarjetas Rojas',
                 'type': 'quantitative'
             },
             'color': {
-                'datum': {'repeat': 'later'},
+                #'datum': {'repeat': 'later'},
+                'field': 'Tarjetas Rojas',
                 'scale': {
                     'range': ['#FB683F', '#FCF951']
                 }
             },
-            'xOffset': {'datum': {'repeat': 'layer'}}
+            #'xOffset': {'datum': {'repeat': 'layer'}}
         },
-    },
+    #},
     'resolve': {'scale': {'y': 'independent'}},
     'config': {
         'legend': {
