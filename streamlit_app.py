@@ -122,7 +122,7 @@ data_playercards = load_data_playercards()
 st.vega_lite_chart(data_playercards, {
     'height': 500,
     'width': 700,
-    #'repeat': {'layer': ['Tarjetas Rojas', 'Tarjetas Amarillas']},
+    'repeat': {'layer': ['Tarjetas Rojas', 'Tarjetas Amarillas']},
     'spec': {
         'mark': {'type': 'bar', 'tooltip': True},
         'encoding': {
