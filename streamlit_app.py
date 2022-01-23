@@ -121,7 +121,7 @@ st.text('Muestra los 20 jugadores con más tarjetas rojas, además de mostrar el
 data_playercards = load_data_playercards()
 st.vega_lite_chart(data_playercards, {
     'height': 500,
-    #'width': 700,
+    'width': 700,
     'repeat': {'layer': ['Tarjetas Rojas', 'Tarjetas Amarillas']},
     'spec': {
         'mark': {'type': 'bar', 'tooltip': True},
@@ -140,12 +140,10 @@ st.vega_lite_chart(data_playercards, {
                     'range': ['#FB683F', '#FCF951']
                 }
             },
-            'xOffset': {
-                'datum': {'repeat': 'layer'}
-            }
+            #'xOffset': {'datum': {'repeat': 'layer'}}
         }
     },
-    'resolve': {'scale': {'y': 'independent'}},
+    #'resolve': {'scale': {'y': 'independent'}},
     'config': {
         'legend': {
             'disable': True
