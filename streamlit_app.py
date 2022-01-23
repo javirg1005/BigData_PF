@@ -171,7 +171,7 @@ with colCountryCups:
             'x': {'field': 'País', 'sort': '-y'},
             'y': {'field': 'Nº de ligas', 'type': 'quantitative'},
             'color': {
-                'field': 'País', 
+                'field': 'Nº de jugadores', 
                 'scale': {'scheme': 'pastel2'}
             }
         },
@@ -194,7 +194,7 @@ with colCountryPlayers:
             'x': {'field': 'País', 'sort': '-y'},
             'y': {'field': 'Nº de jugadores', 'type': 'quantitative'},
             'color': {
-                'field': 'País', 
+                'field': 'Nº de jugadores', 
                 'scale': {'scheme': 'set3'}
             }
         },
@@ -219,7 +219,7 @@ with colGolTeams:
             'x': {'field': 'Equipos', 'sort': '-y'},
             'y': {'field': 'Goles totales', 'type': 'quantitative'},
             'color': {
-                'field': 'Equipos', 
+                'field': 'Goles totales', 
                 'scale': {'scheme': 'pinkyellowgreen'}
             }
         },
@@ -242,8 +242,8 @@ with colGolPlayer:
             'x': {'field': 'Jugador', 'sort': '-y'},
             'y': {'field': 'Goles totales', 'type': 'quantitative'},
             'color': {
-                'field': 'Jugador', 
-                'scale': {'scheme': 'redyellowgreen', 'reverse': True}
+                'field': 'Goles totales', 
+                'scale': {'scheme': 'browngreen'}
             }
         },
         'config': {
