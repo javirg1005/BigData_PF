@@ -252,3 +252,25 @@ with colGolPlayer:
             }
         }
     })
+
+st.subheader('Valor de mercado por país (millones de €)')
+st.text('Muestra el valor de mercado de mayor a menor en los países.')
+data_mvpaises = load_data_mvpais()
+st.vega_lite_chart(data_mvpaises, {
+    'mark': {'type': 'bar', 'tooltip': True},
+    'height': 800,
+    'width': 1200,
+    'encoding': {
+        'x': {'field': 'Jugadores', 'sort': '-y'},
+        'y': {'field': 'Valor de mercado (millones €)', 'type': 'quantitative'},
+        'color': {
+            'field': 'Valor de mercado (millones €)', 
+            'scale': {'scheme': 'spectral', 'reverse': True}
+        }
+    },
+    'config': {
+        'legend': {
+            'disable': True
+        }
+    }
+})
