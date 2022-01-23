@@ -72,31 +72,9 @@ col1, col2, col3 = st.columns([2.5, 6, 1])
 with col1:
     st.write("")
 with col2:
-    st.title('Patrones de consumo en Almería (2015)')
+    st.title('Tu puta madre en vinagre')
 with col3:
     st.write("")
-
-st.subheader('Valor de mercado por país (millones de €)')
-st.text('Muestra el valor de mercado ordenado de mayor a menor en los países.')
-data_mvpaises = load_data_mvpais()
-st.vega_lite_chart(data_mvpaises, {
-    'mark': {'type': 'bar', 'tooltip': True},
-    'height': 850,
-    'width': 1200,
-    'encoding': {
-        'x': {'field': 'País', 'sort': '-y'},
-        'y': {'field': 'Valor de mercado (millones €)', 'type': 'quantitative'},
-        'color': {
-            'field': 'Valor de mercado (millones €)', 
-            'scale': {'scheme': 'rainbow', 'reverse': True}
-        }
-    },
-    'config': {
-        'legend': {
-            'disable': True
-        }
-    }
-})
 
 colTeamMarketValue, colPlayerMarketValue = st.columns(2)
 
@@ -146,40 +124,21 @@ with colPlayerMarketValue:
         }
     })
 
-st.subheader('Jugadores con más tarjetas rojas')
-st.text('Muestra los 20 jugadores con más tarjetas rojas, además de mostrar el número de amarillas también.')
-data_playercards = load_data_playercards()
-st.vega_lite_chart(data_playercards, {
-    'height': 800,
+st.subheader('Valor de mercado por país (millones de €)')
+st.text('Muestra el valor de mercado ordenado de mayor a menor en los países.')
+data_mvpaises = load_data_mvpais()
+st.vega_lite_chart(data_mvpaises, {
+    'mark': {'type': 'bar', 'tooltip': True},
+    'height': 850,
     'width': 1200,
     'encoding': {
-        'x': {
-            'field': 'Jugador',
-            'type': 'nominal',
-            'sort': '-layer'
+        'x': {'field': 'País', 'sort': '-y'},
+        'y': {'field': 'Valor de mercado (millones €)', 'type': 'quantitative'},
+        'color': {
+            'field': 'Valor de mercado (millones €)', 
+            'scale': {'scheme': 'rainbow', 'reverse': True}
         }
     },
-    'layer': [
-        {
-            'mark': {'type': 'bar', 'tooltip': True, 'xOffset': -10, 'size': 20, 'color': '#FB683F'},
-            'encoding': {
-                'y': {
-                    'field': 'Tarjetas Rojas',
-                    'type': 'quantitative'
-                }
-            }
-        },
-        {
-            'mark': {'type': 'bar', 'tooltip': True, 'xOffset': 10, 'size': 20, 'color': '#FCF951'},
-            'encoding': {
-                'y': {
-                    'field': 'Tarjetas Amarillas',
-                    'type': 'quantitative'
-                }
-            }
-        }
-    ],
-    'resolve': {'scale': {'y': 'independent'}},
     'config': {
         'legend': {
             'disable': True
@@ -234,6 +193,47 @@ with colCountryPlayers:
             }
         }
     })
+
+st.subheader('Jugadores con más tarjetas rojas')
+st.text('Muestra los 20 jugadores con más tarjetas rojas, además de mostrar el número de amarillas también.')
+data_playercards = load_data_playercards()
+st.vega_lite_chart(data_playercards, {
+    'height': 800,
+    'width': 1200,
+    'encoding': {
+        'x': {
+            'field': 'Jugador',
+            'type': 'nominal',
+            'sort': '-layer'
+        }
+    },
+    'layer': [
+        {
+            'mark': {'type': 'bar', 'tooltip': True, 'xOffset': -10, 'size': 20, 'color': '#FB683F'},
+            'encoding': {
+                'y': {
+                    'field': 'Tarjetas Rojas',
+                    'type': 'quantitative'
+                }
+            }
+        },
+        {
+            'mark': {'type': 'bar', 'tooltip': True, 'xOffset': 10, 'size': 20, 'color': '#FCF951'},
+            'encoding': {
+                'y': {
+                    'field': 'Tarjetas Amarillas',
+                    'type': 'quantitative'
+                }
+            }
+        }
+    ],
+    'resolve': {'scale': {'y': 'independent'}},
+    'config': {
+        'legend': {
+            'disable': True
+        }
+    }
+})
 
 colGolTeams, colGolPlayer = st.columns(2)
 
