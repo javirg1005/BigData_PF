@@ -126,9 +126,21 @@ st.vega_lite_chart(data_playercards, {
     'spec': {
         'mark': {'type': 'bar', 'tooltip': True},
         'encoding': {
-            'x': {'field': 'Jugador'},
-            'y': {'field': {'repeat': 'layer'}, 'type': 'quantitative'},
-            'color': {'datum': {'repeat': 'later'}, 'scale': {'range': ['#FB683F', '#FCF951']}},
+            'x': {
+                'field': 'Jugador',
+                'type': 'nominal'
+            },
+            'y': {
+                'aggregate': 'sum',
+                'field': {'repeat': 'layer'},
+                'type': 'quantitative'
+            },
+            'color': {
+                'datum': {'repeat': 'later'},
+                'scale': {
+                    'range': ['#FB683F', '#FCF951']
+                }
+            },
             'xOffset': {'datum': {'repeat': 'layer'}}
         },
     },
