@@ -117,24 +117,24 @@ with colPlayerMarketValue:
     })
 
 st.subheader('Jugadores con más tarjetas rojas')
-    st.text('Muestra los 20 jugadores con más tarjetas rojas, además de mostrar el número de amarillas también.')
-    data_playercards = load_data_playercards()
-    st.vega_lite_chart(data_playercards, {
-        'mark': {'type': 'bar', 'tooltip': True},
-        'height': 500,
-        'width': 700,
-        'encoding': {
-            'x': {'field': 'Jugadores', 'sort': '-y'},
-            'y': {'field': 'Tarjetas Rojas', 'type': 'quantitative'},
-            'xOffset': {'field': 'Tarjetas Amarillas', 'type': 'quantitative'},
-            'color': {
-                'field': 'Tarjetas Amarillas', 
-                'scale': {'range': ['#FB683F', '#FCF951']}
-            }
-        },
-        'config': {
-            'legend': {
-                'disable': True
-            }
+st.text('Muestra los 20 jugadores con más tarjetas rojas, además de mostrar el número de amarillas también.')
+data_playercards = load_data_playercards()
+st.vega_lite_chart(data_playercards, {
+    'mark': {'type': 'bar', 'tooltip': True},
+    'height': 500,
+    'width': 700,
+    'encoding': {
+        'x': {'field': 'Jugadores', 'sort': '-y'},
+        'y': {'field': 'Tarjetas Rojas', 'type': 'quantitative'},
+        'xOffset': {'field': 'Tarjetas Amarillas', 'type': 'quantitative'},
+        'color': {
+            'field': 'Tarjetas Amarillas', 
+            'scale': {'range': ['#FB683F', '#FCF951']}
         }
-    })
+    },
+    'config': {
+        'legend': {
+            'disable': True
+        }
+    }
+})
